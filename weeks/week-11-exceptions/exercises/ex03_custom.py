@@ -2,8 +2,13 @@
 
 
 def distance(position: int, goal: int) -> int:
-    # TODO: reproduce with (1, 4), fix the subtraction and retain an assertion.
-    return position - goal
+    """Return the absolute distance from position to goal."""
+    return abs(position - goal)
 
 
-print(distance(1, 4))
+if __name__ == "__main__":
+    # Regression check for the original failing input (1, 4).
+    assert distance(1, 4) == 3
+    assert distance(4, 1) == 3
+    assert distance(3, 3) == 0
+    print("Distance regression checks: PASS")
